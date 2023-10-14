@@ -101,9 +101,7 @@ class GenericRemotControlCard extends HTMLElement {
           button_held = false
         });
         button.addEventListener('click', function(source){
-          console.log(button.id);
           let buttonData = getButtonData(button.id, config);
-          console.log(buttonData)
           let domain = buttonData.call.split(".")[0]
           let action = buttonData.call.split(".")[1]
           hass.callService(domain,
