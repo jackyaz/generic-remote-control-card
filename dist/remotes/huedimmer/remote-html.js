@@ -71,19 +71,19 @@ function getRemoteStyle_huedimmer(config) {
     background: url(${base_url}/off.png) no-repeat
 }
 
-#remote-control-huedimmer li#hue_power_on a:hover {
+#remote-control-huedimmer li#hue_power_on a:hover a:active {
     background: url(${base_url}/on_over.png) no-repeat 0px 0px
 }
 
-#remote-control-huedimmer li#hue_dim_up a:hover {
+#remote-control-huedimmer li#hue_dim_up a:hover a:active {
     background: url(${base_url}/dimup_over.png) no-repeat 0px 0px
 }
 
-#remote-control-huedimmer li#hue_dim_down a:hover {
+#remote-control-huedimmer li#hue_dim_down a:hover a:active {
     background: url(${base_url}/dimdown_over.png) no-repeat 0px 0px
 }
 
-#remote-control-huedimmer li#hue_power_off a:hover {
+#remote-control-huedimmer li#hue_power_off a:hover a:active {
     background: url(${base_url}/off_over.png) no-repeat 0px 0px
 }
   `;

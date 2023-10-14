@@ -100,6 +100,20 @@ class GenericRemotControlCard extends HTMLElement {
           clearTimeout(timeout_id);
           button_held = false
         });
+        button.addEventListener('ontouchstart',function() {
+          timeout_id = setTimeout(function() {
+            button_held=true;
+            held_button(button, config, hass);
+          }, hold_time);
+        });
+        button.addEventListener('ontouchcancel',function() {
+          clearTimeout(timeout_id);
+          button_held = false
+        });
+        button.addEventListener('ontouchend',function() {
+          clearTimeout(timeout_id);
+          button_held = false
+        });
         button.addEventListener('click', function(source){
           let buttonData = getButtonData(button.id, config);
           let domain = buttonData.call.split(".")[0]
