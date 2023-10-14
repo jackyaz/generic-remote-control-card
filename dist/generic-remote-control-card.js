@@ -73,9 +73,7 @@ class GenericRemotControlCard extends HTMLElement {
            this.content.innerHTML = html;
            card.appendChild(this.content);
            card.appendChild(style);
-
            root.appendChild(card);
-
            this._bindButtons(card, this._hass, this._config);
         }
     } catch(err){
