@@ -94,11 +94,11 @@ class GenericRemotControlCard extends HTMLElement {
         });
         button.addEventListener('mouseup',function() {
           clearTimeout(timeout_id);
-          if(button_held === true){window.addEventListener('click', captureClick, true);} // <-- This registers this listener for the capture phase instead of the bubbling phase!
+          button_held = false
         });
         button.addEventListener('mouseleave',function() {
           clearTimeout(timeout_id);
-          if(button_held === true){window.addEventListener('click', captureClick, true);} // <-- This registers this listener for the capture phase instead of the bubbling phase!
+          button_held = false
         });
         button.addEventListener('click', function(source){
           console.log(button.id);
