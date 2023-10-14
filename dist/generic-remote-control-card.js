@@ -28,7 +28,6 @@ async function held_button(button, config, hass) {
   let domain = buttonData.call.split(".")[0]
   let action = buttonData.call.split(".")[1]
   while (button_held === true) {
-    console.log("Looping...");
     hass.callService(domain,
                       action,
                       buttonData.data
@@ -80,7 +79,6 @@ class GenericRemotControlCard extends HTMLElement {
            this._bindButtons(card, this._hass, this._config);
         }
     } catch(err){
-      console.log('waiting for remote load');
       loadScript(config.remote_template);
     }
   }
@@ -93,7 +91,6 @@ class GenericRemotControlCard extends HTMLElement {
         button.addEventListener('mousedown',function() {
           timeout_id = setTimeout(function() {
             button_held=true;
-            console.log("Held");
             held_button(button, config, hass);
           }, hold_time);
         });
