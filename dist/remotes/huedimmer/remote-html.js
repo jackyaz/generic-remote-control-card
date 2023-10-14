@@ -31,15 +31,15 @@ function getRemoteStyle_huedimmer(config) {
     list-style-type: none
 }
 
-#on a,
-#dimup a,
-#dimdown a,
-#off a {
+#hue_power_on a,
+#hue_dim_up a,
+#hue_dim_down a,
+#hue_power_off a {
     position: absolute;
     disrwd: block
 }
 
-#remote-control-huedimmer li#on a {
+#remote-control-huedimmer li#hue_power_on a {
     left: 8px;
     top: 10px;
     width: 217px;
@@ -47,7 +47,7 @@ function getRemoteStyle_huedimmer(config) {
     background: url(${base_url}/on.png) no-repeat
 }
 
-#remote-control-huedimmer li#dimup a {
+#remote-control-huedimmer li#hue_dim_up a {
     left: 9px;
     top: 194px;
     width: 214px;
@@ -55,7 +55,7 @@ function getRemoteStyle_huedimmer(config) {
     background: url(${base_url}/dimup.png) no-repeat
 }
 
-#remote-control-huedimmer li#dimdown a {
+#remote-control-huedimmer li#hue_dim_down a {
     left: 9px;
     top: 302px;
     width: 213px;
@@ -63,7 +63,7 @@ function getRemoteStyle_huedimmer(config) {
     background: url(${base_url}/dimdown.png) no-repeat
 }
 
-#remote-control-huedimmer li#off a {
+#remote-control-huedimmer li#hue_power_off a {
     left: 8px;
     top: 410px;
     width: 215px;
@@ -71,19 +71,19 @@ function getRemoteStyle_huedimmer(config) {
     background: url(${base_url}/off.png) no-repeat
 }
 
-#remote-control-huedimmer li#on a:hover {
+#remote-control-huedimmer li#hue_power_on a:hover {
     background: url(${base_url}/on_over.png) no-repeat 0px 0px
 }
 
-#remote-control-huedimmer li#dimup a:hover {
+#remote-control-huedimmer li#hue_dim_up a:hover {
     background: url(${base_url}/dimup_over.png) no-repeat 0px 0px
 }
 
-#remote-control-huedimmer li#dimdown a:hover {
+#remote-control-huedimmer li#hue_dim_down a:hover {
     background: url(${base_url}/dimdown_over.png) no-repeat 0px 0px
 }
 
-#remote-control-huedimmer li#off a:hover {
+#remote-control-huedimmer li#hue_power_off a:hover {
     background: url(${base_url}/off_over.png) no-repeat 0px 0px
 }
   `;
@@ -99,10 +99,10 @@ function getRemoteHtml_huedimmer(config){
    </div>
    <div id="remote-control-huedimmer">
      <ul>
-       <li id="on" class="myButton-${template}"><a href="#" title="on"></a></li>
-       <li id="dimup" class="myButton-${template}"><a href="#" title="dimup"></a></li>
-       <li id="dimdown" class="myButton-${template}"><a href="#" title="dimdown"></a></li>
-       <li id="off" class="myButton-${template}"><a href="#" title="off"></a></li>
+       <li id="hue_power_on" class="myButton-${template}"><a draggable="false" href="#" title="hue_power_on"></a></li>
+       <li id="hue_dim_up" class="myButton-${template}"><a draggable="false" href="#" title="hue_dim_up"></a></li>
+       <li id="hue_dim_down" class="myButton-${template}"><a draggable="false" href="#" title="hue_dim_down"></a></li>
+       <li id="hue_power_off" class="myButton-${template}"><a draggable="false" href="#" title="hue_power_off"></a></li>
      </ul>
    </div>    
  </div>
