@@ -113,7 +113,7 @@ function getRemoteStyle_geemarctv100(config) {
 #remote-control-geemarctv100 li#gee_btn_1 a {
     left: 21px;
     top: 433px;
-    width: 76x;
+    width: 76px;
     height: 95px;
     background: url(${base_url}/gee_btn_1.png) no-repeat
 }
