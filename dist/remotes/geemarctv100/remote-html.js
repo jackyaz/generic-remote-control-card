@@ -15,6 +15,7 @@ function getRemoteStyle_geemarctv100(config) {
 
 .container {
     width: calc(var(--sz) * 294px);
+    height: calc(var(--sz) * 1000px);
     margin: 0 auto
 }
 
