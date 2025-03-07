@@ -9,7 +9,7 @@ function loadScript(remote_template){
   script.src = `/hacsfiles/generic-remote-control-card/remotes/${remote_template}/remote-html.js`;
   script.type = "text/javascript";
   script.async = false;
-  document.head.appendChild(script); 
+  document.head.appendChild(script);
   window[`scriptLoaded_${remote_template}`] = true;
 }
 
@@ -59,23 +59,26 @@ class GenericRemotControlCard extends HTMLElement {
 
     try{
       const html = window[`getRemoteHtml_${config.remote_template}`](config);
-        const css = window[`getRemoteStyle_${config.remote_template}`](config);
+      const css = window[`getRemoteStyle_${config.remote_template}`](config);
 
-        const root = this.shadowRoot;
-        this._hass = hass;
-        // root.lastChild.hass = hass;
+      const scale = (parseInt(config.scale) || 100)/100;
+      const scaleCss = `\n  :host { --sz: ${scale} }\n\n`;
 
-        const card = document.createElement('ha-card');
-        if(!this.content && window[`scriptLoaded_${config.remote_template}`]){
-           this.content = document.createElement('div');
-           const style = document.createElement('style');
-           style.textContent = css;
-           this.content.innerHTML = html;
-           card.appendChild(this.content);
-           card.appendChild(style);
-           root.appendChild(card);
-           this._bindButtons(card, this._hass, this._config);
-        }
+      const root = this.shadowRoot;
+      this._hass = hass;
+      // root.lastChild.hass = hass;
+
+      const card = document.createElement('ha-card');
+      if(!this.content && window[`scriptLoaded_${config.remote_template}`]){
+        this.content = document.createElement('div');
+        const style = document.createElement('style');
+        style.textContent = scaleCss + css;
+        this.content.innerHTML = html;
+        card.appendChild(this.content);
+        card.appendChild(style);
+        root.appendChild(card);
+        this._bindButtons(card, this._hass, this._config);
+      }
     } catch(err){
       loadScript(config.remote_template);
     }
